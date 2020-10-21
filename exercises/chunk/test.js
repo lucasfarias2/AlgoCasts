@@ -31,3 +31,28 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
 
   expect(chunked).toEqual([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13]]);
 });
+
+test('chunk devides an array of 8 elements with chunk size 3', () => {
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+  const chunked = chunk(arr, 3);
+
+  expect(chunked).toEqual( [[ 1, 2, 3], [4, 5, 6], [7, 8]]);
+});
+
+test('chunk devides an array of 7 elements with chunk size 3', () => {
+  const arr = [1, 2, 3, 4, 5, 6, 7];
+  const chunked = chunk(arr, 3);
+
+  expect(chunked).toEqual( [[ 1, 2, 3], [4, 5, 6], [7]]);
+});
+
+test('chunk devides an array of 7 elements with chunk size 6', () => {
+  const arr = [1, 2, 3, 4, 5, 6, 7];
+  const chunked = chunk(arr, 6);
+
+  expect(chunked).toEqual( [[ 1, 2, 3, 4, 5, 6], [7]]);
+});
+
+
+
+
