@@ -7,6 +7,21 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {}
+function capitalize(str) {
+  const regex = new RegExp(/^\s$/);
+  let newStr = "";
+
+  for (let i = 0; i < str.length; i++) {
+    let charToConcatenate = str[i];
+
+    if (regex.test(str[i - 1]) || i === 0) {
+      charToConcatenate = charToConcatenate.toUpperCase();
+    }
+
+    newStr = newStr + charToConcatenate;
+  }
+
+  return newStr;
+}
 
 module.exports = capitalize;
